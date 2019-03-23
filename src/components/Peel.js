@@ -11,7 +11,7 @@ class Peel extends Component {
                   
         <div className="sticky anim750">
           <div className="front circle_wrapper anim750">
-            <div className="circle anim750 darkout"></div>
+            <div className="circle darkout anim750"></div>
           </div>
         </div>
         
