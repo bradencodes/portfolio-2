@@ -41,14 +41,6 @@ html {
   top: 0px;
   overflow: hidden;
 }
-#Awesome .peel_circle_wrapper {
-  position: absolute;
-  width: 180px;
-  height: 180px;
-  left: 0px;
-  top: 0px;
-  overflow: hidden;
-}
 #Awesome .circle {
   position: absolute;
   width: 140px;
@@ -63,27 +55,36 @@ html {
   height: 10px;
   top: 30px;
 }
-#Awesome:hover .back {
-  height: 90px;
-  top: 110px;
-}
 #Awesome .back .circle {
   margin-top: -130px;
   background-color: #fbec3f;
   background-image: -webkit-linear-gradient(bottom, rgba(251, 236, 63, 0), rgba(255, 255, 255, 0.8));
 }
+#Awesome:hover .back {
+  height: 90px;
+  top: 110px;
+}
 #Awesome:hover .back .circle {
   margin-top: -50px;
+}
+#Awesome:hover .front {
+  height: 70px;
+  -webkit-box-shadow: 0 -60px 10px -60px rgba(0, 0, 0, 0.1);
+}
+#Awesome:hover .front .circle {
+  margin-top: -90px;
+  background-color: #e2d439;
+  background-position: 0 100px;
+}
+#Awesome:hover h4 {
+  opacity: 0;
+  transition: opacity 50ms linear 300ms;
 }
 #Awesome .front {
   height: 150px;
   bottom: 0;
   top: auto;
   -webkit-box-shadow: 0 -140px 20px -140px rgba(0, 0, 0, 0.3);
-}
-#Awesome:hover .front {
-  height: 70px;
-  -webkit-box-shadow: 0 -60px 10px -60px rgba(0, 0, 0, 0.1);
 }
 #Awesome .front .circle {
   margin-top: -10px;
@@ -101,13 +102,4 @@ html {
   height: 140px;
   line-height: 140px;
   transition: opacity 50ms linear 400ms;
-}
-#Awesome:hover h4 {
-  opacity: 0;
-  transition: opacity 50ms linear 300ms;
-}
-#Awesome:hover .front .circle {
-  margin-top: -90px;
-  background-color: #e2d439;
-  background-position: 0 100px;
 }

@@ -18,7 +18,7 @@ class Peel extends Component {
         <h4>Peel Me!</h4>
                   
         <div className="sticky anim750">
-          <div className="back peel_circle_wrapper anim750">
+          <div className="back circle_wrapper anim750">
             <div className="circle darkout anim750"></div>
           </div>
         </div>
