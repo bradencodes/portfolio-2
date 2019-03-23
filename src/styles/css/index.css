@@ -67,6 +67,7 @@ html {
 #Awesome:hover .back .circle {
   margin-top: 20px;
   opacity: 0;
+  transition: all 750ms ease-in-out, opacity 500ms ease-out 500ms;
 }
 #Awesome:hover .front {
   height: 0px;
@@ -77,10 +78,11 @@ html {
   background-color: darkcyan;
   background-position: 0 170px;
   opacity: 0;
+  transition: all 750ms ease-in-out, opacity 500ms ease-out 500ms;
 }
 #Awesome:hover h4 {
   opacity: 0;
-  transition: opacity 50ms linear 300ms;
+  transition: opacity 50ms linear 200ms;
 }
 #Awesome .front {
   height: 150px;
