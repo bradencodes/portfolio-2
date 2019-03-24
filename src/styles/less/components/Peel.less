@@ -2,144 +2,151 @@
     transition: all 750ms ease-in-out;
 }
 
-#Awesome{
-    @cw: 280px;
-    @ch: 280px;
-    @sw: @cw - (2 * @marg);
-    @sh:  @ch - (2 * @marg);
-    @peel_to: 260px;
-    @marg: 10px;
-    @ph: 20px;
+.peel_container {
 
-    position: relative;
-    width: @cw;
-    height: @ch;
+    width: 450px;
+    height: 580px;
     margin: 0 auto;
 
-    backface-visibility: hidden;
-
-    .sticky{
-        position: absolute;
-        top: 0;
-        left: 0;
+    #Awesome{
+        @cw: 180px;
+        @ch: 180px;
+        @sw: @cw - (2 * @marg);
+        @sh:  @ch - (2 * @marg);
+        @peel_to: @sh + @marg;
+        @marg: 10px;
+        @ph: 10px;
+    
+        position: relative;
         width: @cw;
         height: @ch;
-    }
-
-    .reveal{
-
-        .circle{
-            box-shadow: inset 5px 5px 8px rgba(0, 0, 0, .3);
+    
+        backface-visibility: hidden;
+    
+        .sticky{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: @cw;
+            height: @ch;
+        }
+    
+        .reveal{
+    
+            .circle{
+                box-shadow: inset 5px 5px 8px rgba(0, 0, 0, .3);
+            
+                font-family: 'helvetica neue', arial;
+                font-weight: 200;
+                line-height: @sh;
+                text-align: center;
+            
+                cursor: pointer;
+            
+                border: black dashed 2px;
+            
+                background: white;
+            }
+    
+        }
+    
+        .circle_wrapper{
+            position: absolute;
+            width: @cw;
+            height: @ch;
+            left: 0px;
+            top: 0px;
+            overflow: hidden;
         
+        }
+    
+        .circle{
+            position: absolute;
+            width: @sw;
+            height:  @sh;
+            margin: @marg;
+            
+            border-radius: 9px;
+        
+        }
+    
+        .darkout{
+            border: black dashed 2px;
+        }
+        
+        .back{
+            height: @ph;
+            top: @marg + @ph;
+    
+            .circle{
+                margin-top: @ph - @sh;
+                background-color: pink;
+            }
+        }
+        
+        &:hover{
+    
+            .back{
+                height: @peel_to + @marg;
+                top: @peel_to + @marg;
+    
+                .circle{
+                    margin-top: @peel_to - @sh;
+                    opacity: 0;
+                    transition: all 750ms ease-in-out, opacity 500ms ease-out 750ms;
+                }
+            }
+    
+            .front{
+                height: 0;
+                
+                -webkit-box-shadow: 0 -60px 10px -60px rgba(0,0,0,.1);
+        
+                .circle{
+                    margin-top: -@peel_to;
+                    background-color: darkcyan;
+                    background-position: 0 (@peel_to + @ph);
+                    opacity: 0;
+                    transition: all 750ms ease-in-out, opacity 500ms ease-out 750ms;
+                }
+            }
+    
+            h4{
+                opacity: 0;
+                transition: opacity 50ms linear 200ms;
+            }
+        }
+        
+        .front{
+            height: @sh + @marg - @ph;
+            bottom: 0;
+            top: auto;
+            
+            -webkit-box-shadow: 0 (-@sh) (@marg) (-@sh) rgba(0,0,0,.3);
+    
+            .circle{
+                margin-top: -@ph;
+                background: cyan;
+            
+                // background-image: -webkit-linear-gradient(bottom, rgba(251,236,63,.0) 75%, darkcyan 95%);
+                // background-image: -moz-linear-gradient(bottom, rgba(251,236,63,.0) 75%, darkcyan 95%);
+                // background-image: linear-gradient(bottom, rgba(251,236,63,.0) 75%, darkcyan 95%);
+            }
+        }
+        
+        h4{
             font-family: 'helvetica neue', arial;
             font-weight: 200;
-            line-height: @sh;
             text-align: center;
-        
-            cursor: pointer;
-        
-            border: black dashed 2px;
-        
-            background: white;
+            position: absolute;
+    
+            width: @cw;
+            height: @sh;
+            line-height: @sh;
+                
+            transition: opacity 50ms linear 400ms;
         }
-
-    }
-
-    .circle_wrapper{
-        position: absolute;
-        width: @cw;
-        height: @ch;
-        left: 0px;
-        top: 0px;
-        overflow: hidden;
     
-    }
-
-    .circle{
-        position: absolute;
-        width: @sw;
-        height:  @sh;
-        margin: @marg;
-        
-        border-radius: 9px;
-    
-    }
-
-    .darkout{
-        border: black dashed 2px;
-    }
-    
-    .back{
-        height: @ph;
-        top: @marg + @ph;
-
-        .circle{
-            margin-top: @ph - @sh;
-            background-color: pink;
-        }
-    }
-    
-    &:hover{
-
-        .back{
-            height: @peel_to + @marg;
-            top: @peel_to + @marg;
-
-            .circle{
-                margin-top: @peel_to - @sh;
-                opacity: 0;
-                transition: all 750ms ease-in-out, opacity 500ms ease-out 750ms;
-            }
-        }
-
-        .front{
-            height: @sh - @peel_to;
-            
-            -webkit-box-shadow: 0 -60px 10px -60px rgba(0,0,0,.1);
-    
-            .circle{
-                margin-top: -@peel_to - @marg;
-                background-color: darkcyan;
-                background-position: 0 (@peel_to + @ph);
-                opacity: 0;
-                transition: all 750ms ease-in-out, opacity 500ms ease-out 750ms;
-            }
-        }
-
-        h4{
-            opacity: 0;
-            transition: opacity 50ms linear 200ms;
-        }
-    }
-    
-    .front{
-        height: @sh + @marg - @ph;
-        bottom: 0;
-        top: auto;
-        
-        -webkit-box-shadow: 0 (-@sh) (@marg) (-@sh) rgba(0,0,0,.3);
-
-        .circle{
-            margin-top: -@ph;
-            background: cyan;
-        
-            // background-image: -webkit-linear-gradient(bottom, rgba(251,236,63,.0) 75%, darkcyan 95%);
-            // background-image: -moz-linear-gradient(bottom, rgba(251,236,63,.0) 75%, darkcyan 95%);
-            // background-image: linear-gradient(bottom, rgba(251,236,63,.0) 75%, darkcyan 95%);
-        }
-    }
-    
-    h4{
-        font-family: 'helvetica neue', arial;
-        font-weight: 200;
-        text-align: center;
-        position: absolute;
-
-        width: @cw;
-        height: @sh;
-        line-height: @sh;
-            
-        transition: opacity 50ms linear 400ms;
-    }
+    }    
 
 }
