@@ -3,13 +3,12 @@
 }
 
 #Awesome{
-    @cw: 180px;
-    @ch: 180px;
+    @cw: 280px;
+    @ch: 280px;
     @sw: @cw - (2 * @marg);
     @sh:  @ch - (2 * @marg);
-    @peel_height: 140px;
-    @peel_to: 160px;
-    @marg: 20px;
+    @peel_to: 260px;
+    @marg: 10px;
     @ph: 20px;
 
     position: relative;
@@ -77,36 +76,33 @@
         .circle{
             margin-top: @ph - @sh;
             background-color: pink;
-        
-            background-image: -webkit-linear-gradient(bottom, rgba(251,236,63,.0), rgba(255,255,255,.8));
         }
     }
     
     &:hover{
 
         .back{
-
-            height: @peel_to;
-            top: @peel_to + 20px;
+            height: @peel_to + @marg;
+            top: @peel_to + @marg;
 
             .circle{
-                margin-top: @peel_to - @peel_height;
+                margin-top: @peel_to - @sh;
                 opacity: 0;
-                transition: all 750ms ease-in-out, opacity 500ms ease-out 500ms;
+                transition: all 750ms ease-in-out, opacity 500ms ease-out 750ms;
             }
         }
 
         .front{
-            height: @peel_height - @peel_to + 20px;
+            height: @sh - @peel_to;
             
             -webkit-box-shadow: 0 -60px 10px -60px rgba(0,0,0,.1);
     
             .circle{
-                margin-top: -@peel_to;
+                margin-top: -@peel_to - @marg;
                 background-color: darkcyan;
-                background-position: 0 (@peel_to + 10px);
+                background-position: 0 (@peel_to + @ph);
                 opacity: 0;
-                transition: all 750ms ease-in-out, opacity 500ms ease-out 500ms;
+                transition: all 750ms ease-in-out, opacity 500ms ease-out 750ms;
             }
         }
 
