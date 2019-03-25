@@ -10,21 +10,21 @@ html {
   transition: all 750ms ease-in-out;
 }
 .peel_container {
-  width: 450px;
-  height: 580px;
+  width: 100%;
+  height: 100%;
   margin: 0 auto;
 }
 .peel_container #Awesome {
   position: relative;
-  width: 180px;
+  width: 280px;
   height: 180px;
   backface-visibility: hidden;
 }
 .peel_container #Awesome .sticky {
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
-  width: 180px;
+  width: 280px;
   height: 180px;
 }
 .peel_container #Awesome .reveal .circle {
@@ -39,15 +39,15 @@ html {
 }
 .peel_container #Awesome .circle_wrapper {
   position: absolute;
-  width: 180px;
+  width: 280px;
   height: 180px;
   left: 0px;
-  top: 0px;
+  bottom: 0px;
   overflow: hidden;
 }
 .peel_container #Awesome .circle {
   position: absolute;
-  width: 160px;
+  width: 260px;
   height: 160px;
   margin: 10px;
   border-radius: 9px;
@@ -56,19 +56,19 @@ html {
   border: black dashed 2px;
 }
 .peel_container #Awesome .back {
-  height: 10px;
-  top: 20px;
+  height: 20px;
+  bottom: 30px;
 }
 .peel_container #Awesome .back .circle {
-  margin-top: -150px;
+  margin-top: 0;
   background-color: pink;
 }
 .peel_container #Awesome:hover .back {
   height: 180px;
-  top: 180px;
+  bottom: 180px;
 }
 .peel_container #Awesome:hover .back .circle {
-  margin-top: 10px;
+  margin-bottom: 10px;
   opacity: 0;
   transition: all 750ms ease-in-out, opacity 500ms ease-out 750ms;
 }
@@ -77,9 +77,9 @@ html {
   -webkit-box-shadow: 0 -60px 10px -60px rgba(0, 0, 0, 0.1);
 }
 .peel_container #Awesome:hover .front .circle {
-  margin-top: -170px;
+  margin-bottom: -170px;
   background-color: darkcyan;
-  background-position: 0 180px;
+  background-position: 0 190px;
   opacity: 0;
   transition: all 750ms ease-in-out, opacity 500ms ease-out 750ms;
 }
@@ -88,13 +88,13 @@ html {
   transition: opacity 50ms linear 200ms;
 }
 .peel_container #Awesome .front {
-  height: 160px;
-  bottom: 0;
-  top: auto;
+  height: 150px;
+  top: 0;
+  bottom: auto;
   -webkit-box-shadow: 0 -160px 10px -160px rgba(0, 0, 0, 0.3);
 }
 .peel_container #Awesome .front .circle {
-  margin-top: -10px;
+  margin-bottom: -20px;
   background: cyan;
 }
 .peel_container #Awesome h4 {
@@ -102,8 +102,24 @@ html {
   font-weight: 200;
   text-align: center;
   position: absolute;
-  width: 180px;
+  width: 280px;
   height: 160px;
   line-height: 160px;
   transition: opacity 50ms linear 400ms;
+}
+.magazine {
+  margin: 0 auto;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.magazine .page {
+  height: 100%;
+}
+.magazine .page img {
+  max-width: 100%;
+  height: 100%;
 }

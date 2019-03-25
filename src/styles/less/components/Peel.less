@@ -3,19 +3,18 @@
 }
 
 .peel_container {
-
-    width: 450px;
-    height: 580px;
+    width: 100%;
+    height: 100%;
     margin: 0 auto;
 
     #Awesome{
-        @cw: 180px;
+        @cw: 280px;
         @ch: 180px;
         @sw: @cw - (2 * @marg);
         @sh:  @ch - (2 * @marg);
         @peel_to: @sh + @marg;
         @marg: 10px;
-        @ph: 10px;
+        @ph: 20px;
     
         position: relative;
         width: @cw;
@@ -25,7 +24,7 @@
     
         .sticky{
             position: absolute;
-            top: 0;
+            bottom: 0;
             left: 0;
             width: @cw;
             height: @ch;
@@ -55,7 +54,7 @@
             width: @cw;
             height: @ch;
             left: 0px;
-            top: 0px;
+            bottom: 0px;
             overflow: hidden;
         
         }
@@ -76,10 +75,10 @@
         
         .back{
             height: @ph;
-            top: @marg + @ph;
+            bottom: @marg + @ph;
     
             .circle{
-                margin-top: @ph - @sh;
+                margin-top: 0;
                 background-color: pink;
             }
         }
@@ -88,10 +87,10 @@
     
             .back{
                 height: @peel_to + @marg;
-                top: @peel_to + @marg;
+                bottom: @peel_to + @marg;
     
                 .circle{
-                    margin-top: @peel_to - @sh;
+                    margin-bottom: @peel_to - @sh;
                     opacity: 0;
                     transition: all 750ms ease-in-out, opacity 500ms ease-out 750ms;
                 }
@@ -103,7 +102,7 @@
                 -webkit-box-shadow: 0 -60px 10px -60px rgba(0,0,0,.1);
         
                 .circle{
-                    margin-top: -@peel_to;
+                    margin-bottom: -@peel_to;
                     background-color: darkcyan;
                     background-position: 0 (@peel_to + @ph);
                     opacity: 0;
@@ -119,13 +118,13 @@
         
         .front{
             height: @sh + @marg - @ph;
-            bottom: 0;
-            top: auto;
+            top: 0;
+            bottom: auto;
             
             -webkit-box-shadow: 0 (-@sh) (@marg) (-@sh) rgba(0,0,0,.3);
     
             .circle{
-                margin-top: -@ph;
+                margin-bottom: -@ph;
                 background: cyan;
             
                 // background-image: -webkit-linear-gradient(bottom, rgba(251,236,63,.0) 75%, darkcyan 95%);
