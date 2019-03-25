@@ -2,7 +2,6 @@ html {
   font-size: 62.5%;
 }
 * {
-  box-sizing: border-box;
   outline: none;
   font-size: 1.6rem;
 }
@@ -115,6 +114,7 @@ html {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  border: 2px black dashed;
 }
 .magazine .page {
   height: 100%;

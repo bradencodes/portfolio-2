@@ -6,12 +6,12 @@ import Peel from './components/Peel.js';
 import Turn from './components/Turn.js';
 
 const options = {
-  width: 800,
+  width: 450,
   height: 600,
   autoCenter: false,
-  display: "double",
+  display: "single",
   acceleration: true,
-  elevation: 50,
+  inclination: 50,
   gradients: !$.isTouch,
   when: {
     turned: function(e, page) {

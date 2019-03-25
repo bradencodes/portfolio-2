@@ -56,7 +56,7 @@ var has3d,
     
     // Enables gradients
 
-    gradients: true,
+    gradients: false,
 
     // Duration of transition in milliseconds
 
@@ -68,7 +68,7 @@ var has3d,
 
     // Display
 
-    display: 'double',
+    display: 'single',
 
     // Events
 
@@ -86,7 +86,7 @@ var has3d,
     // forward: Activates both tr and br corners
     // all: Activates all the corners
 
-    corners: 'forward',
+    corners: 'all',
     
     // Size of the active zone of each corner
 
@@ -110,7 +110,7 @@ var has3d,
   pagesInDOM = 6,
   
   pagePosition = {0: {top: 0, left: 0, right: 'auto', bottom: 'auto'},
-          1: {top: 0, right: 0, left: 'auto', bottom: 'auto'}},
+          1: {top: 0, left: 0, right: 'auto', bottom: 'auto'}},
 
   // Gets basic attributes for a layer
 
@@ -634,7 +634,7 @@ turnMethods = {
       if (display=='single') {
         if (!data.pageObjs[0]) {
           this.turn('stop').
-            css({'overflow': 'hidden'});
+            css({'overflow': ''});
           data.pageObjs[0] = $('<div />', {'class': 'turn-page p-temporal'}).
                   css({width: this.width(), height: this.height()}).
                     appendTo(this);
