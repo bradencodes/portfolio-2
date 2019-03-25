@@ -5,6 +5,11 @@ html {
   outline: none;
   font-size: 1.6rem;
 }
+.App {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
 .anim750 {
   transition: all 750ms ease-in-out;
 }

@@ -1257,10 +1257,12 @@ flipMethods = {
       c = {x: Math.max(0, e[0].pageX-pos.left), y: Math.max(0, e[0].pageY-pos.top)},
       csz = data.opts.cornerSize,
       allowedCorners = flipMethods._cAllowed.call(this);
-      console.log("c: ", c);
+      // console.log("c: ", c);
 
+      // Check that the cursor is on the page
       if (c.x<=0 || c.y<=0 || c.x>=width || c.y>=height) return false;
 
+      // See wich corner the cursor is on
       if (c.y<csz) c.corner = 't';
       else if (c.y>=height-csz) c.corner = 'b';
       else return false;
@@ -1269,7 +1271,8 @@ flipMethods = {
       else if (c.x>=width-csz) c.corner+= 'r';
       else return false;
 
-    return ($.inArray(c.corner, allowedCorners)==-1) ? false : c;
+      // Return the corner the cursor is on if that corner is allowed
+      return ($.inArray(c.corner, allowedCorners)==-1) ? false : c;
 
   },
 
@@ -1299,10 +1302,10 @@ flipMethods = {
     if (opts.folding) return opts.folding;
     else if(opts.turn) {
       var data = opts.turn.data();
-      if (data.display == 'single')
-        return (data.pageObjs[opts.next]) ? data.pageObjs[0] : null;
-      else
-        return data.pageObjs[opts.next];
+      // if (data.display == 'single')
+      //   return (data.pageObjs[opts.next]) ? data.pageObjs[0] : null;
+      // else
+      return data.pageObjs[opts.next];
     }
 
   },

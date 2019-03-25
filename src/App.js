@@ -22,7 +22,11 @@ const options = {
 
 const pages = [
   "https://raw.github.com/blasten/turn.js/master/demos/magazine/pages/01.jpg",
-  "https://raw.github.com/blasten/turn.js/master/demos/magazine/pages/02.jpg"
+  "https://raw.github.com/blasten/turn.js/master/demos/magazine/pages/02.jpg",
+  "https://raw.github.com/blasten/turn.js/master/demos/magazine/pages/03.jpg",
+  "https://raw.github.com/blasten/turn.js/master/demos/magazine/pages/04.jpg",
+  "https://raw.github.com/blasten/turn.js/master/demos/magazine/pages/05.jpg",
+  "https://raw.github.com/blasten/turn.js/master/demos/magazine/pages/06.jpg"
 ];
 
 class App extends Component {
