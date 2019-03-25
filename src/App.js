@@ -12,7 +12,7 @@ const options = {
   display: "single",
   acceleration: true,
   inclination: 50,
-  gradients: !$.isTouch,
+  gradients: true,
   when: {
     turned: function(e, page) {
       console.log("Current view: ", $(this).turn("view"));

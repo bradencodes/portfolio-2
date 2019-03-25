@@ -1257,6 +1257,7 @@ flipMethods = {
       c = {x: Math.max(0, e[0].pageX-pos.left), y: Math.max(0, e[0].pageY-pos.top)},
       csz = data.opts.cornerSize,
       allowedCorners = flipMethods._cAllowed.call(this);
+      console.log("c: ", c);
 
       if (c.x<=0 || c.y<=0 || c.x>=width || c.y>=height) return false;
 
